@@ -1,0 +1,390 @@
+<html>
+  <head>
+    <title>Chatbot Widget</title>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta content="utf-8" http-equiv="encoding" />
+
+    <style>
+        .footer{
+    text-align: center;
+    bottom: 0%;
+    padding-top: 30px;
+        }
+
+        body {
+  font-family: "Open Sans", sans-serif;
+    /* Multiple background images */
+    background: linear-gradient(
+                to bottom,
+                #b0b0b0, /* Mercury */
+                #e5e4e2, /* Venus */
+                #518eef, /* Earth */
+                #f66868, /* Mars */
+                #d1a384, /* Jupiter */
+                #f7dd67, /* Saturn */
+                #9bc4e2, /* Uranus */
+                #6285ec  /* Neptune */
+            );
+    /*background-image: url('./static/img/body2.jpg');*/
+    /* Background position */
+    background-position: center;
+    display: felx;
+
+    /* Background size */
+    background-size: contain;
+
+    /* Background repeat */
+    background-repeat: no-repeat;
+
+    /* Background attachment to make it scrollable */
+    background-attachment: scroll;
+    
+    /* Other styling to ensure the page is scrollable */
+    height: auto;
+   /* Example height to enable scrolling */
+    margin: 0 auto;
+    padding: 0;
+    line-height: 1.6;
+    justify-content: center;
+}   
+        fieldset {
+            display: flex;
+            width: 90%;
+            margin: 20px;
+            margin-top: 40px;
+            border: 1px solid red;
+            padding: 20px;
+            box-sizing: border-box;
+            margin-left: 75px;
+            margin-right: 100px;
+        }
+        legend {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        .left-side {
+            width: 50%;
+            background-color: #f4f4f4;
+            color: #333;
+            box-sizing: border-box;
+            padding: 20px;
+            margin-right: 10px; /* Add margin to the right of the left block */
+        }
+        .right-side {
+            width: 50%;
+            padding: 20px;
+            background-color: #e8e8e8;
+            color: #333;
+            box-sizing: border-box;
+            margin-left: 10px; /* Add margin to the left of the right block */
+        }
+        .image-name-container {
+            background: linear-gradient(to bottom right, #b0b0b0, #d0d0d0);
+            padding: 20px;
+            text-align: center;
+        }
+        .image-name-container img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+        .image-name-container .name {
+            margin-top: 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .content1 {
+            padding: 5px;
+        }
+        .section-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #b0b0b0;
+            padding-bottom: 5px;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .social-media {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .social-media a {
+            margin-right: 10px;
+            text-decoration: none;
+            color: #0066cc;
+            display: inline-block;
+        }
+        .social-media img {
+            width: 30px;
+            height: 30px;
+            margin-right: 5px;
+            border-radius: 50%;
+        }
+        .social-media a:hover {
+            text-decoration: underline;
+        }
+        .carousel {
+            position: relative;
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+        
+        }
+        .carousel img {
+            width: 100%;
+            height: 300px;
+            object-fit: contain;
+            display: none;
+        }
+        .carousel img.active {
+            display: block;
+        }
+        .carousel .text {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .carousel-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .carousel-buttons button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .nav{
+        background-color: rgba(0, 0, 0, 0);
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    align-items: center;
+  }
+    img{
+      border-radius: 50%;
+    }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content a:hover {background-color: #f1f1f1}
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  span{
+    margin-left: 100px;
+  }
+  /* table */
+  table {
+            margin-left: 2px;
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+            margin-left: auto;
+            padding-left: auto;
+        }
+        th, td {
+            padding: 5px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+    <!--Import Google Icon Font-->
+    <!--link rel="stylesheet" href="./static/css/styles.css"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body>
+    <div class="nav">
+        <div class="dropdown">
+          <img src="./static/img" width="50" height="50"  onclick="toggleDropdown()">
+          <div class="dropdown-content" id="dropdownMenu">
+            <a href="./home.html">Home</a>
+            <a href="#about">About Us</a>
+            <a href="./Features.html">Features</a>
+            <a href="./index.html">Logout</a>
+          </div>
+        </div>
+        <marquee style="color: black; font-size: 20px; font-weight: bold; border-radius: 15px; padding: 10px;">
+            AI_STORY NARRATION
+        </marquee>        
+        <script>
+          function toggleDropdown() {
+            var dropdownMenu = document.getElementById("dropdownMenu");
+            if (dropdownMenu.style.display === "block") {
+              dropdownMenu.style.display = "none";
+            } else {
+              dropdownMenu.style.display = "block";
+            }
+          }
+        </script>
+        </div>
+    <div class="container">
+    <fieldset>
+      <legend>About Us</legend>
+      <div class="left-side">
+          <div class="image-name-container">
+              <img src="./static/img/WhatsApp Image 2024-07-02 at 08.16.43_4b492bde.jpg " alt="Profile Picture">
+              <div class="name">vikas</div>
+          </div>
+          <div class="content1">
+              <div class="section">
+                  <div class="section-title">Personal Details</div>
+                  <p>Name:vikas</p>
+                  <p>Email: vikas126015@gmail.com</p>
+                  <p>Phone: +91 8328257998</p>
+
+                  <p>DOB: 13/08/2004</p>
+                  <p>Address: sitara center,Vijayawada,N.T.R District,Andhra Pradesh,520012.</p>
+              </div>
+              <div class="section">
+                  <div class="section-title">Education Qualifications</div>
+                  <table>
+                    <tr>
+                        <th>Course</th>
+                        <th>School/College</th>
+                        <th>Board/University</th>
+                        <th>Year of Passing</th>
+                        <th>Percentage</th>
+                    </tr>
+                    <tr>
+                        <td>Bachelor of Science(Data science)</td>
+                        <td>K.B.N College</td>
+                        <td>Krishna University</td>
+                        <td>2022-2025</td>
+                        <td>PURSUING</td>
+                    </tr>
+                    <tr>
+                        <td>Intermediate(M.P.C)</td>
+                        <td>sri chaitanya college</td>
+                        <td>Board of Intermediate Education,AP</td>
+                        <td>2019-2021</td>
+                        <td>780</td>
+                    </tr>
+                    <tr>
+                        <td>SSC</td>
+                        <td>kc high school</td>
+                        <td>SSC</td>
+                        <td>2019-2020</td>
+                        <td>9.0</td>
+                    </tr>
+                </table>
+              </div>
+              <div class="section">
+                  <div class="section-title">Skills</div>
+                  <ul>
+                    <li>Data Visualization</li>
+                    <li>Html & Css</li>
+                    
+                </ul>
+              </div>
+          </div>
+      </div>
+      <div class="right-side">
+          <div class="section">
+              <div class="section-title">Career Objective</div>
+              <p>Secure a responsible career to fully utilize my training skills to develop the entire organization that will enrich and nurture my skills, which helps me in developing my goals and supporting the organization.</p>
+          </div>
+          <div class="section">
+              <div class="section-title">Projects</div>
+              <p>Project 1: Description</p>
+              <p>Project 2: Description</p>
+          </div>
+          <div class="section">
+              <div class="section-title">Certifications and Training</div>
+              <div class="carousel">
+                  <img src="./static/img/vikas cert.PNG" style="border-radius: 0%;" alt="Certification 1" class="active">
+                        
+                  <div class="text">Certification 1 Description</div>
+                  <div class="carousel-buttons">
+                      <button onclick="prevImage()">&#10094;</button>
+                      <button onclick="nextImage()">&#10095;</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </fieldset>
+  <script>
+      let currentIndex = 0;
+      const images = document.querySelectorAll('.carousel img');
+      const texts = [
+          'This certifies that  vikas has successfully completed the Ai in practice:Applying Ai course on June 05, 2024, through edX.',
+  ];
+      const textElement = document.querySelector('.carousel .text');
+
+      function showImage(index) {
+          images.forEach((img, i) => {
+              img.classList.remove('active');
+              if (i === index) {
+                  img.classList.add('active');
+                  textElement.textContent = texts[i];
+              }
+          });
+      }
+
+      function nextImage() {
+          currentIndex = (currentIndex + 1) % images.length;
+          showImage(currentIndex);
+      }
+
+      function prevImage() {
+          currentIndex = (currentIndex - 1 + images.length) % images.length;
+          showImage(currentIndex);
+      }
+
+      setInterval(nextImage, 3000); // Change image every 3 seconds
+  </script>
+    </div>
+    <div class="footer">
+      <div class="social-icons">
+          <a href="https://www.linkedin.com/in/aaruhi-ai-bot-361889315?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><img src="./static/img/linkedin_3536569.png" height="20" width="20"></a>
+
+          <a href="mailto:vikas12601@gmail.com"><img src="./static/img/envelope_9046102.png" height="20" width="20"></a>
+          <a href="https://x.com/Aaruhi_Ai_Bot?s=09"><img src="./static/img/twitter_5968830.png" height="20" width="20"></a>
+      </div>
+      <div class="contact-info">
+          <p>Phone: +1234567890</p>
+          <p>Email: STORY BOT@gmail.com</p>
+      </div>
+  </div>
+  </body>
+</html>

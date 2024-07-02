@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            background: linear-gradient(to top,rgb(245, 184, 72),skyblue,rgb(139, 239, 139));
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            background-repeat: no-repeat;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .logo {
+            margin-bottom: 20px;
+        }
+        .logo img {
+            max-width: 100%;
+            height: auto;
+        }
+        .website-name {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        .footer{
+    text-align: center;
+    bottom: 0%;
+    padding-top: 30px;
+    </style>
+</head>
+<body>
+    <div class="container" id="form-container">
+        <div class="logo">
+            <img src="./static/img/log.jfif" style="border-radius: 50%;"> <!-- Replace with your logo image path -->
+        </div>
+        <div class="website-name">AI STORY NARRATOR</div>
+        <div id="login">
+            <h2>Login</h2>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" required>
+            </div>
+            <button onclick="login()">Login</button>
+        </div>
+        <div class="footer">
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/aaruhi-ai-bot-361889315?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><img src="./static/img/linkedin_3536569.png" height="20" width="20"></a>
+            <a href="https://www.facebook.com/profile.php?id=61561541960481&mibextid=ZbWKwL"><img src="./static/img/facebook_733603.png" height="20" width="20"></a>
+            <a href="https://www.instagram.com/aaruhi_ai_bot"><img src="./static/img/instagram_3938052.png" height="20" width="20"></a>
+            <a href="mailto:aaruhiaibot411205@gmail.com"><img src="./static/img/envelope_9046102.png" height="20" width="20"></a>
+            <a href="https://x.com/Aaruhi_Ai_Bot?s=09"><img src="./static/img/twitter_5968830.png" height="20" width="20"></a>
+        </div>
+        <div class="contact-info">
+            <p>Phone: +1234567890</p>
+            <p>Email: AI story bot@gmail.com</p>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            if (username === 'vikas' && password === '12345') {
+                alert('Login successful!');
+                window.location.href = 'home.html'; // Replace with your actual home page
+            } else {
+                alert('Invalid username or password.');
+            }
+        }
+    </script>
+</body>
+</html>
